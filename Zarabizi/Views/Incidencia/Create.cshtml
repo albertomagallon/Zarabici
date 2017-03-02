@@ -1,0 +1,49 @@
+﻿@model Zarabizi.Models.Incidencia
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Crear;
+}
+
+<h2>@Messages.lbl_Crear</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Messages.lbl_Incidencia</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.textoIncidencia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.textoIncidencia)
+            @Html.ValidationMessageFor(model => model.textoIncidencia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaIncidencia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaIncidencia)
+            @Html.ValidationMessageFor(model => model.fechaIncidencia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idSocio, "Socio")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idSocio", String.Empty)
+            @Html.ValidationMessageFor(model => model.idSocio)
+        </div>
+
+        <p>
+            <input type="submit" value="Crear" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+</div>

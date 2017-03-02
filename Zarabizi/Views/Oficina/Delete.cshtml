@@ -1,0 +1,38 @@
+﻿@model Zarabizi.Models.Oficina
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Oficina</legend>
+
+    <div class="display-label">nombreOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreOficina)
+    </div>
+
+    <div class="display-label">ubicacionOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ubicacionOficina)
+    </div>
+
+    <div class="display-label">ciudadOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ciudadOficina)
+    </div>
+
+    <div class="display-label">provinciaOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.provinciaOficina)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Zarabizi.Models.Anclaje>
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Inicio;
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink(@Messages.lbl_Nuevo, "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Messages.form_Anclaje_estadoAnclaje
+        </th>
+        <th>
+            @Messages.form_Anclaje_ocupadoAnclaje
+        </th>
+        <th>
+            @Messages.lbl_Estacion
+        </th>
+        <th>
+            @Messages.lbl_Bicicleta
+            Bicicleta
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.estadoAnclaje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ocupadoAnclaje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estacion.nombreEstacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bicicleta.idBicicleta)
+        </td>
+        <td>
+            @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id = item.idAnclaje }) |
+            @Html.ActionLink(@Messages.lbl_Detalles, "Details", new { id = item.idAnclaje }) |
+            @Html.ActionLink(@Messages.lbl_Eliminar, "Delete", new { id = item.idAnclaje })
+        </td>
+    </tr>
+}
+
+</table>

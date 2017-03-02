@@ -1,0 +1,38 @@
+﻿@model Zarabizi.Models.RepararBicicleta
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Eliminar;
+}
+
+<h2>@Messages.lbl_Eliminar</h2>
+
+<h3>@Messages.lbl_SeguroEliminar</h3>
+<fieldset>
+    <legend>Reparar Bicicleta</legend>
+
+    <div class="display-label">Empleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Empleado.DNIEmpleado)
+    </div>
+
+    <div class="display-label">Bicicleta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bicicleta.idBicicleta)
+    </div>
+
+    <div class="display-label">Descripción de la reparación</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcionRepararBicicleta)
+    </div>
+
+    <div class="display-label">Fecha de la reparación</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaRepararBicicleta)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Eliminar" /> |
+        @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+    </p>
+}

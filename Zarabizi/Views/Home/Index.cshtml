@@ -1,0 +1,37 @@
+﻿@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@using Zarabizi.Resources
+@using System.Web.Security;
+@using System.Security;
+@using System.Web;
+@using System.Web.UI;
+@using System.Web.UI.WebControls;
+@using System.Data.SqlClient;
+@using System.Configuration;
+@using System.Data;
+@{
+    ViewBag.Title = @Messages.lbl_Inicio;
+}
+
+<h2>@ViewBag.Message</h2>
+<p> 
+   
+
+    @if (Roles.IsUserInRole("Administrador"))
+    {
+        Zarabizi.Models.ZarabiziEntities db = new Zarabizi.Models.ZarabiziEntities();
+
+        //Instancio el servicio de consultas pasandole la cadena de conexion a la base de datos
+        Zarabizi.Controllers.Consultas consulta =
+            new Zarabizi.Controllers.Consultas(System.Configuration.ConfigurationManager.ConnectionStrings["ZarabiziEntities"].ToString());
+        //Llamo al método ShowRecorridos (que crea una tabla html con datos), pasandole los datos que
+        //retorna el RecorridosHabituales de la consulta de Recorridos
+        //this.Controls.Add(Zarabizi.UI.RecorridoUI.ShowRecorridos(consulta.RecorridosHabituales()));
+        //Html.ALGO(Zarabizi.UI.RecorridoUI.ShowRecorridos(consulta.RecorridosHabituales()));
+        //new HtmlString(Zarabizi.UI.RecorridoUI.ShowRecorridos(consulta.RecorridosHabituales()).ToHtmlString());
+    }
+    
+    <br /><br /><br /><br />    
+
+</p>

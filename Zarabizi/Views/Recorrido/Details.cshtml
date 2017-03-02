@@ -1,0 +1,50 @@
+﻿@model Zarabizi.Models.Recorrido
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Detalles;
+}
+
+<h2>@Messages.lbl_Detalles</h2>
+
+<fieldset>
+    <legend>Recorrido</legend>
+
+    <div class="display-label">Distacina del recorrido</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.distanciaRecorrido)
+    </div>
+
+    <div class="display-label">Fecha salida del recorrido</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaSalidaRecorrido)
+    </div>
+
+    <div class="display-label">Fecha llegada del recorrido</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaLlegadaRecorrido)
+    </div>
+
+    <div class="display-label">Estacion 1</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estacion1.nombreEstacion)
+    </div>
+
+    <div class="display-label">Estacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estacion.nombreEstacion)
+    </div>
+
+    <div class="display-label">Bicicleta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bicicleta.idBicicleta)
+    </div>
+
+    <div class="display-label">Socio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Socio.nombreSocio)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=Model.idRecorrido }) |
+    @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+</p>

@@ -1,0 +1,45 @@
+﻿@model Zarabizi.Models.Tarifa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Tarifa</legend>
+
+    <div class="display-label">diasTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.diasTarifa)
+    </div>
+
+    <div class="display-label">nombreTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreTarifa)
+    </div>
+
+    <div class="display-label">fechaInicioTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaInicioTarifa)
+    </div>
+
+    <div class="display-label">fechaFinalTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaFinalTarifa)
+    </div>
+
+    <div class="display-label">precioTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.precioTarifa)
+    </div>
+
+    <div class="display-label">Oficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Oficina.nombreOficina)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.idTarifa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

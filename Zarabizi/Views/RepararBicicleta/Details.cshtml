@@ -1,0 +1,35 @@
+﻿@model Zarabizi.Models.RepararBicicleta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>RepararBicicleta</legend>
+
+    <div class="display-label">Empleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Empleado.DNIEmpleado)
+    </div>
+
+    <div class="display-label">Bicicleta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bicicleta.idBicicleta)
+    </div>
+
+    <div class="display-label">descripcionRepararBicicleta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcionRepararBicicleta)
+    </div>
+
+    <div class="display-label">fechaRepararBicicleta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaRepararBicicleta)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.idRepararBicicleta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

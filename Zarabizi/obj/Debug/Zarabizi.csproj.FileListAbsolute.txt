@@ -1,0 +1,8 @@
+C:\Users\Alberto\TIE\Ingeniería Web\Trabajo obligatorio\Zarabizi\Zarabizi\bin\Zarabizi.dll
+C:\Users\Alberto\TIE\Ingeniería Web\Trabajo obligatorio\Zarabizi\Zarabizi\bin\Zarabizi.pdb
+C:\Users\Alberto\TIE\Ingeniería Web\Trabajo obligatorio\Zarabizi\Zarabizi\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Alberto\TIE\Ingeniería Web\Trabajo obligatorio\Zarabizi\Zarabizi\obj\Debug\Zarabizi.Resources.Messages.resources
+C:\Users\Alberto\TIE\Ingeniería Web\Trabajo obligatorio\Zarabizi\Zarabizi\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Alberto\TIE\Ingeniería Web\Trabajo obligatorio\Zarabizi\Zarabizi\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Alberto\TIE\Ingeniería Web\Trabajo obligatorio\Zarabizi\Zarabizi\obj\Debug\Zarabizi.dll
+C:\Users\Alberto\TIE\Ingeniería Web\Trabajo obligatorio\Zarabizi\Zarabizi\obj\Debug\Zarabizi.pdb

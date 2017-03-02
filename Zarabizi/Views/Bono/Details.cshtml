@@ -1,0 +1,40 @@
+﻿@model Zarabizi.Models.Bono
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Detalles;
+}
+
+<h2>@Messages.lbl_Detalles</h2>
+
+<fieldset>
+    <legend>@Messages.lbl_Bono</legend>
+
+    <div class="display-label">@Messages.form_Bono_fechaCompraBono</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaCompraBono)
+    </div>
+
+    <div class="display-label">@Messages.form_Bono_fechaInicioBono</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaInicioBono)
+    </div>
+
+    <div class="display-label">@Messages.form_Bono_fechaFinalBono</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaFinalBono)
+    </div>
+
+    <div class="display-label">@Messages.lbl_Socio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Socio.nombreSocio)
+    </div>
+
+    <div class="display-label">@Messages.lbl_Tarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tarifa.nombreTarifa)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=Model.idBono }) |
+    @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+</p>

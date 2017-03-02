@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Zarabizi.Models.Bicicleta>
+@using Zarabizi.Resources
+
+@{
+    ViewBag.Title = @Messages.lbl_Bicicleta;
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink(@Messages.lbl_Crear, "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Messages.form_Bicicleta_distanciaTotal
+        </th>
+        <th>
+            @Messages.form_Bicicleta_distanciaMantenimiento
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.distanciaTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.distanciaMantenimiento)
+        </td>
+        <td>
+            @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=item.idBicicleta }) |
+            @Html.ActionLink(@Messages.lbl_Detalles, "Details", new { id=item.idBicicleta }) |
+            @Html.ActionLink(@Messages.lbl_Eliminar, "Delete", new { id=item.idBicicleta })
+        </td>
+    </tr>
+}
+
+</table>

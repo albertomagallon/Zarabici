@@ -1,0 +1,73 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+	<link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../Content/pro_dropdown_2.css"/>
+    <script src="../../Scripts/stuHover.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            stuHover = function () {
+                var cssRule;
+                var newSelector;
+                for (var i = 0; i < document.styleSheets.length; i++)
+                    for (var x = 0; x < document.styleSheets[i].rules.length; x++) {
+                        cssRule = document.styleSheets[i].rules[x];
+                        if (cssRule.selectorText.indexOf("LI:hover") >= 0) {
+                            newSelector = cssRule.selectorText.replace(/LI:hover/gi, "LI.iehover");
+                            document.styleSheets[i].addRule(newSelector, cssRule.style.cssText);
+                        }
+                    }
+                var getElm = document.getElementById("nav").getElementsByTagName("LI");
+                for (var i = 0; i < getElm.length; i++) {
+                    getElm[i].onmouseover = function () {
+                        this.className += " iehover";
+                    }
+                    getElm[i].onmouseout = function () {
+                        this.className = this.className.replace(new RegExp(" iehover\\b"), "");
+                    }
+                }
+            }
+            if (window.attachEvent) window.attachEvent("onload", stuHover);
+
+    </script>
+</head>
+
+<body>
+	<div class="page">
+
+		<div id="header">
+			<div id="title">
+				<h1>Administración de Zarabizi</h1>
+			</div>
+			  
+			<div id="logindisplay">
+				<% Html.RenderPartial("LogOnUserControl"); %>
+			</div> 
+			
+			<div id="menucontainer">
+            <span class="preload1"></span>
+<span class="preload2"></span>
+
+<ul id="nav">
+	<li class="top"><span><%= Html.ActionLink("Inicio", "Index", "Home", new { Area = "" }, new { @class = "top_link" })%></span></li>
+	<li class="top"><span><%= Html.ActionLink("Acerca de", "About", "Home", new { Area = "" }, new { @class = "top_link" })%></span></li>
+					<% if (Roles.IsUserInRole("Administrador")) { %>
+						<li class="top"><span><%= Html.ActionLink("Usuario administrador", "Index", "UserAdministration", new { Area = "UserAdministration" }, new { @class = "top_link" })%></span></li>
+					<% } %>
+</ul>
+			
+			</div>
+		</div>
+
+		<div id="main">
+			<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+			<div id="footer">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

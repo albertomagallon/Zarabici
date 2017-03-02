@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Zarabizi.Models.Recorrido>
+@using Zarabizi.Resources
+@{
+    ViewBag.Title ="Recorrido";
+}
+
+<h2>Recorrido</h2>
+
+<p>
+    @Html.ActionLink(@Messages.lbl_Crear, "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            
+            Distancia del recorrido
+        </th>
+        <th>
+            
+            Fecha salida del recorrido
+        </th>
+        <th>
+            
+            Fecha llegada del recorrido
+        </th>
+        <th>
+            Estacion 1
+        </th>
+        <th>
+            Estacion
+        </th>
+        <th>
+            Bicicleta
+        </th>
+        <th>
+            Socio
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.distanciaRecorrido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaSalidaRecorrido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaLlegadaRecorrido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estacion1.nombreEstacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estacion.nombreEstacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bicicleta.idBicicleta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Socio.nombreSocio)
+        </td>
+        <td>
+            @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=item.idRecorrido }) |
+            @Html.ActionLink(@Messages.lbl_Detalles, "Details", new { id=item.idRecorrido }) |
+            @Html.ActionLink(@Messages.lbl_Eliminar, "Delete", new { id=item.idRecorrido })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,124 @@
+﻿@model Zarabizi.Models.Empleado
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Editar;
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Messages.lbl_Empleado</legend>
+
+        @Html.HiddenFor(model => model.idEmpleado)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DNIEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DNIEmpleado)
+            @Html.ValidationMessageFor(model => model.DNIEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombreEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombreEmpleado)
+            @Html.ValidationMessageFor(model => model.nombreEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.apellidosEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.apellidosEmpleado)
+            @Html.ValidationMessageFor(model => model.apellidosEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.direccionEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direccionEmpleado)
+            @Html.ValidationMessageFor(model => model.direccionEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.poblacionEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.poblacionEmpleado)
+            @Html.ValidationMessageFor(model => model.poblacionEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codigopostalEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.codigopostalEmpleado)
+            @Html.ValidationMessageFor(model => model.codigopostalEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tlfFijoEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tlfFijoEmpleado)
+            @Html.ValidationMessageFor(model => model.tlfFijoEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tlfMovilEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tlfMovilEmpleado)
+            @Html.ValidationMessageFor(model => model.tlfMovilEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.emailEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.emailEmpleado)
+            @Html.ValidationMessageFor(model => model.emailEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaDeAltaEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaDeAltaEmpleado)
+            @Html.ValidationMessageFor(model => model.fechaDeAltaEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaNacimientoEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaNacimientoEmpleado)
+            @Html.ValidationMessageFor(model => model.fechaNacimientoEmpleado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cuentabancariaEmpleado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cuentabancariaEmpleado)
+            @Html.ValidationMessageFor(model => model.cuentabancariaEmpleado)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+</div>

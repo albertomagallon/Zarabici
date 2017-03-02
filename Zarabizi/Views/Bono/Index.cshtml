@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Zarabizi.Models.Bono>
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Bono;
+}
+
+<h2>@Messages.lbl_Bono</h2>
+
+<p>
+    @Html.ActionLink(@Messages.lbl_Crear, "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            
+            @Messages.form_Bono_fechaCompraBono
+        </th>
+        <th>
+            
+            @Messages.form_Bono_fechaInicioBono
+        </th>
+        <th>
+            
+            @Messages.form_Bono_fechaFinalBono
+        </th>
+        <th>
+            
+            @Messages.form_Bono_idSocio
+        </th>
+        <th>            
+            @Messages.form_Bono_idTarifa
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaCompraBono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaInicioBono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaFinalBono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Socio.nombreSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tarifa.nombreTarifa)
+        </td>
+        <td>
+            @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=item.idBono }) |
+            @Html.ActionLink(@Messages.lbl_Detalles, "Details", new { id=item.idBono }) |
+            @Html.ActionLink(@Messages.lbl_Eliminar, "Delete", new { id=item.idBono })
+        </td>
+    </tr>
+}
+
+</table>

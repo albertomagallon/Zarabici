@@ -1,0 +1,33 @@
+﻿@model Zarabizi.Models.Incidencia
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Eliminar;
+}
+
+<h2>@Messages.lbl_Eliminar</h2>
+
+<h3>@Messages.lbl_SeguroEliminar</h3>
+<fieldset>
+    <legend>@Messages.lbl_Incidencia</legend>
+
+    <div class="display-label">@Messages.form_Incidencia_textoIncidencia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.textoIncidencia)
+    </div>
+
+    <div class="display-label">@Messages.form_Incidencia_fechaIncidencia</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaIncidencia)
+    </div>
+
+    <div class="display-label">@Messages.form_Incidencia_idSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Socio.nombreSocio)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Eliminar" /> |
+        @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+    </p>
+}

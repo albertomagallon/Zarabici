@@ -1,0 +1,39 @@
+﻿@model Zarabizi.Models.Anclaje
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Eliminar;
+}
+
+<h2>@Messages.lbl_Eliminar</h2>
+
+<h3>@Messages.lbl_SeguroEliminarAnclaje</h3>
+<fieldset>
+    <legend>@Messages.lbl_Anclaje</legend>
+
+    <div class="display-label">@Messages.form_Anclaje_estadoAnclaje</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoAnclaje)
+    </div>
+
+    <div class="display-label">@Messages.form_Anclaje_ocupadoAnclaje</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ocupadoAnclaje)
+    </div>
+
+    <div class="display-label">@Messages.form_Anclaje_idEstacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estacion.nombreEstacion)
+    </div>
+
+    <div class="display-label">@Messages.form_Anclaje_idBicicleta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bicicleta.idBicicleta)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+    </p>
+}

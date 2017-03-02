@@ -1,0 +1,33 @@
+﻿@model Zarabizi.Models.Estacion
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Eliminar;
+}
+
+<h2>@Messages.lbl_Eliminar</h2>
+
+<h3>@Messages.lbl_SeguroEliminar</h3>
+<fieldset>
+    <legend>@Messages.lbl_Estacion</legend>
+
+    <div class="display-label">@Messages.form_Estacion_nombreEstacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreEstacion)
+    </div>
+
+    <div class="display-label">@Messages.form_Estacion_ubicacionEstacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ubicacionEstacion)
+    </div>
+
+    <div class="display-label">@Messages.form_Estacion_anclajesEstacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.anclajesEstacion)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Eliminar" /> |
+        @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+    </p>
+}

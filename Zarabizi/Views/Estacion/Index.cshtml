@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Zarabizi.Models.Estacion>
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Estacion;
+}
+
+<h2>@Messages.lbl_Estacion</h2>
+
+<p>
+    @Html.ActionLink(@Messages.lbl_Crear, "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            
+            @Messages.form_Estacion_nombreEstacion
+        </th>
+        <th>
+            
+            @Messages.form_Estacion_ubicacionEstacion
+        </th>
+        <th>
+            
+            @Messages.form_Estacion_anclajesEstacion
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreEstacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ubicacionEstacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anclajesEstacion)
+        </td>
+        <td>
+            @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=item.idEstacion }) |
+            @Html.ActionLink(@Messages.lbl_Detalles, "Details", new { id=item.idEstacion }) |
+            @Html.ActionLink(@Messages.lbl_Eliminar, "Delete", new { id=item.idEstacion })
+        </td>
+    </tr>
+}
+
+</table>

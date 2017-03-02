@@ -1,0 +1,25 @@
+﻿@model Zarabizi.Models.Bicicleta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Bicicleta</legend>
+
+    <div class="display-label">distanciaTotal</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.distanciaTotal)
+    </div>
+
+    <div class="display-label">distanciaMantenimiento</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.distanciaMantenimiento)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.idBicicleta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

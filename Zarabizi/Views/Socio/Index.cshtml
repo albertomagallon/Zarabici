@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Zarabizi.Models.Socio>
+           @using Zarabizi.Resources
+
+@{
+    ViewBag.Title = @Messages.lbl_Inicio;
+}
+
+<h2> @Messages.lbl_Inicio</h2>
+
+<p>
+    <!--@Html.ActionLink("Create New", "Create")-->
+</p>
+<table>
+    <tr>
+        <th>
+            @Messages.form_Socio_nombreSocio
+        </th>
+        <th>
+            
+            @Messages.form_Socio_apellidosSocio
+        </th>
+        <th>
+
+            @Messages.form_Socio_direccionSocio
+        </th>
+        <th>
+            
+            @Messages.form_Socio_poblacionSocio
+        </th>
+        <th>
+            
+            @Messages.form_Socio_codigopostalSocio
+        </th>
+        <th>
+            
+            @Messages.form_Socio_tlfFijoSocio
+        </th>
+        <th>
+            
+            @Messages.form_Socio_tlfMovilSocio
+        </th>
+        <th>
+            @Messages.form_Socio_fechaNacimientoSocio
+        </th>
+        <th>
+            
+            @Messages.form_Socio_fechaAltaSocio
+        </th>
+        <th>
+            
+            @Messages.form_Socio_CuentaBancariaSocio
+        </th>
+        <th>
+            
+            @Messages.form_Socio_idOficina
+        </th>
+        <th>
+            
+            @Messages.form_Socio_idUsuario
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidosSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccionSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poblacionSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigopostalSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tlfFijoSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tlfMovilSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaNacimientoSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaAltaSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CuentaBancariaSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Oficina.nombreOficina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aspnet_Users.UserName)
+        </td>
+        <td>
+            @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=item.idSocio }) |
+            @Html.ActionLink(@Messages.lbl_Detalles, "Details", new { id=item.idSocio }) |
+            @Html.ActionLink(@Messages.lbl_Eliminar, "Delete", new { id=item.idSocio })
+        </td>
+    </tr>
+}
+
+</table>

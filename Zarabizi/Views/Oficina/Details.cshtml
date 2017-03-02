@@ -1,0 +1,35 @@
+﻿@model Zarabizi.Models.Oficina
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Oficina</legend>
+
+    <div class="display-label">nombreOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreOficina)
+    </div>
+
+    <div class="display-label">ubicacionOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ubicacionOficina)
+    </div>
+
+    <div class="display-label">ciudadOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ciudadOficina)
+    </div>
+
+    <div class="display-label">provinciaOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.provinciaOficina)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.idOficina }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

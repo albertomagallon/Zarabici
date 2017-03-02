@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Zarabizi.Models.Incidencia>
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Incidencia;
+}
+
+<h2>@Messages.lbl_Incidencia</h2>
+
+<p>
+    @Html.ActionLink(@Messages.lbl_Crear, "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            
+            @Messages.form_Incidencia_textoIncidencia
+        </th>
+        <th>
+            
+            @Messages.form_Incidencia_fechaIncidencia
+        </th>
+        <th>
+            
+            @Messages.form_Incidencia_idSocio
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.textoIncidencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaIncidencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Socio.nombreSocio)
+        </td>
+        <td>
+            @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=item.idIncidencia }) |
+            @Html.ActionLink(@Messages.lbl_Detalles, "Details", new { id=item.idIncidencia }) |
+            @Html.ActionLink(@Messages.lbl_Eliminar, "Delete", new { id=item.idIncidencia })
+        </td>
+    </tr>
+}
+
+</table>

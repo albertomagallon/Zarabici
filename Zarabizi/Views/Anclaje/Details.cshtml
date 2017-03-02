@@ -1,0 +1,35 @@
+﻿@model Zarabizi.Models.Anclaje
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Detalles;
+}
+
+<h2>@Messages.lbl_Detalles</h2>
+
+<fieldset>
+    <legend>Anclaje</legend>
+
+    <div class="display-label">@Messages.form_Anclaje_estadoAnclaje</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.estadoAnclaje)
+    </div>
+
+    <div class="display-label">@Messages.form_Anclaje_ocupadoAnclaje</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ocupadoAnclaje)
+    </div>
+
+    <div class="display-label">@Messages.form_Estacion_nombreEstacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estacion.nombreEstacion)
+    </div>
+
+    <div class="display-label">@Messages.form_Bicicleta_idBicicleta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bicicleta.idBicicleta)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id = Model.idAnclaje }) |
+    @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+</p>

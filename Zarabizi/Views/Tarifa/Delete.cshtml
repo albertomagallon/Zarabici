@@ -1,0 +1,48 @@
+﻿@model Zarabizi.Models.Tarifa
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Tarifa</legend>
+
+    <div class="display-label">diasTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.diasTarifa)
+    </div>
+
+    <div class="display-label">nombreTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreTarifa)
+    </div>
+
+    <div class="display-label">fechaInicioTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaInicioTarifa)
+    </div>
+
+    <div class="display-label">fechaFinalTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaFinalTarifa)
+    </div>
+
+    <div class="display-label">precioTarifa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.precioTarifa)
+    </div>
+
+    <div class="display-label">Oficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Oficina.nombreOficina)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Zarabizi.Models.Empleado>
+@using Zarabizi.Resources
+
+@{
+    ViewBag.Title = @Messages.lbl_Inicio;
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink(Zarabizi.Resources.Messages.lbl_Nuevo, "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Messages.form_Empleado_DNIEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_nombreEmpleado            
+        </th>
+        <th>
+            @Messages.form_Empleado_apellidosEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_direccionEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_poblacionEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_codigopostalEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_tlfFijoEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_tlfMovilEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_emailEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_fechaDeAltaEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_fechaNacimientoEmpleado
+        </th>
+        <th>
+            @Messages.form_Empleado_cuentabancariaEmpleado
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DNIEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidosEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccionEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poblacionEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigopostalEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tlfFijoEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tlfMovilEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaDeAltaEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaNacimientoEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cuentabancariaEmpleado)
+        </td>
+        <td>
+            @Html.ActionLink(@Messages.lbl_Editar, "Edit", new { id=item.idEmpleado }) |
+            @Html.ActionLink(@Messages.lbl_Detalles, "Details", new { id=item.idEmpleado }) |
+            @Html.ActionLink(@Messages.lbl_Eliminar, "Delete", new { id=item.idEmpleado })
+        </td>
+    </tr>
+}
+
+</table>

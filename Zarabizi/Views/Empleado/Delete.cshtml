@@ -1,0 +1,78 @@
+﻿@model Zarabizi.Models.Empleado
+@using Zarabizi.Resources
+@{
+    ViewBag.Title = @Messages.lbl_Eliminar;
+}
+
+<h2> @Messages.lbl_Eliminar</h2>
+
+<h3>@Messages.lbl_SeguroEliminarEmpleado</h3>
+<fieldset>
+    <legend>@Messages.lbl_Empleado</legend>
+
+    <div class="display-label">@Messages.form_Empleado_DNIEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DNIEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_nombreEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_apellidosEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.apellidosEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_direccionEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccionEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_poblacionEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.poblacionEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_codigopostalEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.codigopostalEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_tlfFijoEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tlfFijoEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_tlfMovilEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tlfMovilEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_emailEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.emailEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_fechaDeAltaEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaDeAltaEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_fechaNacimientoEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaNacimientoEmpleado)
+    </div>
+
+    <div class="display-label">@Messages.form_Empleado_cuentabancariaEmpleado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cuentabancariaEmpleado)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+    </p>
+}

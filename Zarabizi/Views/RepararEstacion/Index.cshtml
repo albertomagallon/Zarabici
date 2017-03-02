@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Zarabizi.Models.RepararEstacion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Empleado
+        </th>
+        <th>
+            Estacion
+        </th>
+        <th>
+            descripcionRepararEstacion
+        </th>
+        <th>
+            fechaRepararEstacion
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado.DNIEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estacion.nombreEstacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcionRepararEstacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaRepararEstacion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idRepararEstacion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idRepararEstacion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idRepararEstacion })
+        </td>
+    </tr>
+}
+
+</table>

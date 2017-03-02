@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZarabiziModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ZarabiziEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Anclaje" EntityType="ZarabiziModel.Anclaje" />
+    <EntitySet Name="aspnet_Applications" EntityType="ZarabiziModel.aspnet_Applications" />
+    <EntitySet Name="aspnet_Membership" EntityType="ZarabiziModel.aspnet_Membership" />
+    <EntitySet Name="aspnet_Paths" EntityType="ZarabiziModel.aspnet_Paths" />
+    <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="ZarabiziModel.aspnet_PersonalizationAllUsers" />
+    <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="ZarabiziModel.aspnet_PersonalizationPerUser" />
+    <EntitySet Name="aspnet_Profile" EntityType="ZarabiziModel.aspnet_Profile" />
+    <EntitySet Name="aspnet_Roles" EntityType="ZarabiziModel.aspnet_Roles" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="ZarabiziModel.aspnet_SchemaVersions" />
+    <EntitySet Name="aspnet_Users" EntityType="ZarabiziModel.aspnet_Users" />
+    <EntitySet Name="aspnet_WebEvent_Events" EntityType="ZarabiziModel.aspnet_WebEvent_Events" />
+    <EntitySet Name="Bicicleta" EntityType="ZarabiziModel.Bicicleta" />
+    <EntitySet Name="Bono" EntityType="ZarabiziModel.Bono" />
+    <EntitySet Name="Empleado" EntityType="ZarabiziModel.Empleado" />
+    <EntitySet Name="Estacion" EntityType="ZarabiziModel.Estacion" />
+    <EntitySet Name="Incidencia" EntityType="ZarabiziModel.Incidencia" />
+    <EntitySet Name="Oficina" EntityType="ZarabiziModel.Oficina" />
+    <EntitySet Name="Recorrido" EntityType="ZarabiziModel.Recorrido" />
+    <EntitySet Name="RepararBicicleta" EntityType="ZarabiziModel.RepararBicicleta" />
+    <EntitySet Name="RepararEstacion" EntityType="ZarabiziModel.RepararEstacion" />
+    <EntitySet Name="Socio" EntityType="ZarabiziModel.Socio" />
+    <EntitySet Name="sysdiagrams" EntityType="ZarabiziModel.sysdiagrams" />
+    <EntitySet Name="Tarifa" EntityType="ZarabiziModel.Tarifa" />
+    <EntitySet Name="vw_aspnet_Applications" EntityType="ZarabiziModel.vw_aspnet_Applications" />
+    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="ZarabiziModel.vw_aspnet_MembershipUsers" />
+    <EntitySet Name="vw_aspnet_Profiles" EntityType="ZarabiziModel.vw_aspnet_Profiles" />
+    <EntitySet Name="vw_aspnet_Roles" EntityType="ZarabiziModel.vw_aspnet_Roles" />
+    <EntitySet Name="vw_aspnet_Users" EntityType="ZarabiziModel.vw_aspnet_Users" />
+    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="ZarabiziModel.vw_aspnet_UsersInRoles" />
+    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="ZarabiziModel.vw_aspnet_WebPartState_Paths" />
+    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="ZarabiziModel.vw_aspnet_WebPartState_Shared" />
+    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="ZarabiziModel.vw_aspnet_WebPartState_User" />
+    <AssociationSet Name="fk_anclaje_idBicicleta" Association="ZarabiziModel.fk_anclaje_idBicicleta">
+      <End Role="Bicicleta" EntitySet="Bicicleta" />
+      <End Role="Anclaje" EntitySet="Anclaje" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Anclaje_idEstacion" Association="ZarabiziModel.fk_Anclaje_idEstacion">
+      <End Role="Estacion" EntitySet="Estacion" />
+      <End Role="Anclaje" EntitySet="Anclaje" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__6C190EBB" Association="ZarabiziModel.FK__aspnet_Me__Appli__6C190EBB">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pa__Appli__25518C17" Association="ZarabiziModel.FK__aspnet_Pa__Appli__25518C17">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__0E6E26BF" Association="ZarabiziModel.FK__aspnet_Ro__Appli__0E6E26BF">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__5812160E" Association="ZarabiziModel.FK__aspnet_Us__Appli__5812160E">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__6D0D32F4" Association="ZarabiziModel.FK__aspnet_Me__UserI__6D0D32F4">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__2CF2ADDF" Association="ZarabiziModel.FK__aspnet_Pe__PathI__2CF2ADDF">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__PathI__32AB8735" Association="ZarabiziModel.FK__aspnet_Pe__PathI__32AB8735">
+      <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pe__UserI__339FAB6E" Association="ZarabiziModel.FK__aspnet_Pe__UserI__339FAB6E">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Pr__UserI__02FC7413" Association="ZarabiziModel.FK__aspnet_Pr__UserI__02FC7413">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Socio_idUsuario" Association="ZarabiziModel.fk_Socio_idUsuario">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="Socio" EntitySet="Socio" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Recorrido_idBicicleta" Association="ZarabiziModel.fk_Recorrido_idBicicleta">
+      <End Role="Bicicleta" EntitySet="Bicicleta" />
+      <End Role="Recorrido" EntitySet="Recorrido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RepararBicicleta_idBicicleta" Association="ZarabiziModel.fk_RepararBicicleta_idBicicleta">
+      <End Role="Bicicleta" EntitySet="Bicicleta" />
+      <End Role="RepararBicicleta" EntitySet="RepararBicicleta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Bono_idSocio" Association="ZarabiziModel.fk_Bono_idSocio">
+      <End Role="Socio" EntitySet="Socio" />
+      <End Role="Bono" EntitySet="Bono" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Bono_idTarifa" Association="ZarabiziModel.fk_Bono_idTarifa">
+      <End Role="Tarifa" EntitySet="Tarifa" />
+      <End Role="Bono" EntitySet="Bono" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RepararBicicleta_idEmpleado" Association="ZarabiziModel.fk_RepararBicicleta_idEmpleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="RepararBicicleta" EntitySet="RepararBicicleta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RepararEstacion_idEmpleado" Association="ZarabiziModel.fk_RepararEstacion_idEmpleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="RepararEstacion" EntitySet="RepararEstacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Recorrido_idEstacionFinal" Association="ZarabiziModel.fk_Recorrido_idEstacionFinal">
+      <End Role="Estacion" EntitySet="Estacion" />
+      <End Role="Recorrido" EntitySet="Recorrido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Recorrido_idEstacionInicio" Association="ZarabiziModel.fk_Recorrido_idEstacionInicio">
+      <End Role="Estacion" EntitySet="Estacion" />
+      <End Role="Recorrido" EntitySet="Recorrido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RepararEstacion_idEstacion" Association="ZarabiziModel.fk_RepararEstacion_idEstacion">
+      <End Role="Estacion" EntitySet="Estacion" />
+      <End Role="RepararEstacion" EntitySet="RepararEstacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Incidencia_idSocio" Association="ZarabiziModel.fk_Incidencia_idSocio">
+      <End Role="Socio" EntitySet="Socio" />
+      <End Role="Incidencia" EntitySet="Incidencia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Socio_idOficina" Association="ZarabiziModel.fk_Socio_idOficina">
+      <End Role="Oficina" EntitySet="Oficina" />
+      <End Role="Socio" EntitySet="Socio" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tarifa_idOficina" Association="ZarabiziModel.fk_Tarifa_idOficina">
+      <End Role="Oficina" EntitySet="Oficina" />
+      <End Role="Tarifa" EntitySet="Tarifa" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Recorrido_idSocio" Association="ZarabiziModel.fk_Recorrido_idSocio">
+      <End Role="Socio" EntitySet="Socio" />
+      <End Role="Recorrido" EntitySet="Recorrido" />
+    </AssociationSet>
+    <AssociationSet Name="aspnet_UsersInRoles" Association="ZarabiziModel.aspnet_UsersInRoles">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Anclaje">
+    <Key>
+      <PropertyRef Name="idAnclaje" />
+    </Key>
+    <Property Name="idAnclaje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="estadoAnclaje" Type="Boolean" Nullable="false" />
+    <Property Name="ocupadoAnclaje" Type="Boolean" Nullable="false" />
+    <Property Name="idEstacion" Type="Int32" Nullable="false" />
+    <Property Name="idBicicleta" Type="Int32" />
+    <NavigationProperty Name="Bicicleta" Relationship="ZarabiziModel.fk_anclaje_idBicicleta" FromRole="Anclaje" ToRole="Bicicleta" />
+    <NavigationProperty Name="Estacion" Relationship="ZarabiziModel.fk_Anclaje_idEstacion" FromRole="Anclaje" ToRole="Estacion" />
+  </EntityType>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="ZarabiziModel.FK__aspnet_Me__Appli__6C190EBB" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="ZarabiziModel.FK__aspnet_Pa__Appli__25518C17" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="ZarabiziModel.FK__aspnet_Ro__Appli__0E6E26BF" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="ZarabiziModel.FK__aspnet_Us__Appli__5812160E" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="ZarabiziModel.FK__aspnet_Me__Appli__6C190EBB" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="ZarabiziModel.FK__aspnet_Me__UserI__6D0D32F4" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Paths">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="ZarabiziModel.FK__aspnet_Pa__Appli__25518C17" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="ZarabiziModel.FK__aspnet_Pe__PathI__2CF2ADDF" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="ZarabiziModel.FK__aspnet_Pe__PathI__32AB8735" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationAllUsers">
+    <Key>
+      <PropertyRef Name="PathId" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="ZarabiziModel.FK__aspnet_Pe__PathI__2CF2ADDF" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+  </EntityType>
+  <EntityType Name="aspnet_PersonalizationPerUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="aspnet_Paths" Relationship="ZarabiziModel.FK__aspnet_Pe__PathI__32AB8735" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+    <NavigationProperty Name="aspnet_Users" Relationship="ZarabiziModel.FK__aspnet_Pe__UserI__339FAB6E" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PropertyValuesString" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PropertyValuesBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="aspnet_Users" Relationship="ZarabiziModel.FK__aspnet_Pr__UserI__02FC7413" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="ZarabiziModel.FK__aspnet_Ro__Appli__0E6E26BF" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="ZarabiziModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="ZarabiziModel.FK__aspnet_Us__Appli__5812160E" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="ZarabiziModel.FK__aspnet_Me__UserI__6D0D32F4" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="ZarabiziModel.FK__aspnet_Pe__UserI__339FAB6E" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+    <NavigationProperty Name="aspnet_Profile" Relationship="ZarabiziModel.FK__aspnet_Pr__UserI__02FC7413" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+    <NavigationProperty Name="Socio" Relationship="ZarabiziModel.fk_Socio_idUsuario" FromRole="aspnet_Users" ToRole="Socio" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="ZarabiziModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+  </EntityType>
+  <EntityType Name="aspnet_WebEvent_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+    <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" />
+    <Property Name="EventTime" Type="DateTime" Nullable="false" />
+    <Property Name="EventType" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="EventSequence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventOccurrence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+    <Property Name="EventCode" Type="Int32" Nullable="false" />
+    <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MachineName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="RequestUrl" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+    <Property Name="ExceptionType" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Bicicleta">
+    <Key>
+      <PropertyRef Name="idBicicleta" />
+    </Key>
+    <Property Name="idBicicleta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="distanciaTotal" Type="Decimal" Nullable="false" Precision="10" Scale="3" />
+    <Property Name="distanciaMantenimiento" Type="Decimal" Nullable="false" Precision="10" Scale="3" />
+    <NavigationProperty Name="Anclaje" Relationship="ZarabiziModel.fk_anclaje_idBicicleta" FromRole="Bicicleta" ToRole="Anclaje" />
+    <NavigationProperty Name="Recorrido" Relationship="ZarabiziModel.fk_Recorrido_idBicicleta" FromRole="Bicicleta" ToRole="Recorrido" />
+    <NavigationProperty Name="RepararBicicleta" Relationship="ZarabiziModel.fk_RepararBicicleta_idBicicleta" FromRole="Bicicleta" ToRole="RepararBicicleta" />
+  </EntityType>
+  <EntityType Name="Bono">
+    <Key>
+      <PropertyRef Name="idBono" />
+    </Key>
+    <Property Name="idBono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fechaCompraBono" Type="DateTime" />
+    <Property Name="fechaInicioBono" Type="DateTime" Nullable="false" />
+    <Property Name="fechaFinalBono" Type="DateTime" Nullable="false" />
+    <Property Name="idSocio" Type="Int32" Nullable="false" />
+    <Property Name="idTarifa" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Socio" Relationship="ZarabiziModel.fk_Bono_idSocio" FromRole="Bono" ToRole="Socio" />
+    <NavigationProperty Name="Tarifa" Relationship="ZarabiziModel.fk_Bono_idTarifa" FromRole="Bono" ToRole="Tarifa" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+    </Key>
+    <Property Name="idEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DNIEmpleado" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="nombreEmpleado" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="apellidosEmpleado" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="direccionEmpleado" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="poblacionEmpleado" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="codigopostalEmpleado" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="tlfFijoEmpleado" Type="String" Nullable="false" MaxLength="9" Unicode="true" FixedLength="false" />
+    <Property Name="tlfMovilEmpleado" Type="String" MaxLength="9" Unicode="true" FixedLength="false" />
+    <Property Name="emailEmpleado" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fechaDeAltaEmpleado" Type="DateTime" />
+    <Property Name="fechaNacimientoEmpleado" Type="DateTime" />
+    <Property Name="cuentabancariaEmpleado" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="RepararBicicleta" Relationship="ZarabiziModel.fk_RepararBicicleta_idEmpleado" FromRole="Empleado" ToRole="RepararBicicleta" />
+    <NavigationProperty Name="RepararEstacion" Relationship="ZarabiziModel.fk_RepararEstacion_idEmpleado" FromRole="Empleado" ToRole="RepararEstacion" />
+  </EntityType>
+  <EntityType Name="Estacion">
+    <Key>
+      <PropertyRef Name="idEstacion" />
+    </Key>
+    <Property Name="idEstacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreEstacion" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ubicacionEstacion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="anclajesEstacion" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Anclaje" Relationship="ZarabiziModel.fk_Anclaje_idEstacion" FromRole="Estacion" ToRole="Anclaje" />
+    <NavigationProperty Name="Recorrido" Relationship="ZarabiziModel.fk_Recorrido_idEstacionFinal" FromRole="Estacion" ToRole="Recorrido" />
+    <NavigationProperty Name="Recorrido1" Relationship="ZarabiziModel.fk_Recorrido_idEstacionInicio" FromRole="Estacion" ToRole="Recorrido" />
+    <NavigationProperty Name="RepararEstacion" Relationship="ZarabiziModel.fk_RepararEstacion_idEstacion" FromRole="Estacion" ToRole="RepararEstacion" />
+  </EntityType>
+  <EntityType Name="Incidencia">
+    <Key>
+      <PropertyRef Name="idIncidencia" />
+    </Key>
+    <Property Name="idIncidencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="textoIncidencia" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fechaIncidencia" Type="DateTime" Nullable="false" />
+    <Property Name="idSocio" Type="Int32" />
+    <NavigationProperty Name="Socio" Relationship="ZarabiziModel.fk_Incidencia_idSocio" FromRole="Incidencia" ToRole="Socio" />
+  </EntityType>
+  <EntityType Name="Oficina">
+    <Key>
+      <PropertyRef Name="idOficina" />
+    </Key>
+    <Property Name="idOficina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreOficina" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ubicacionOficina" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ciudadOficina" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="provinciaOficina" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Socio" Relationship="ZarabiziModel.fk_Socio_idOficina" FromRole="Oficina" ToRole="Socio" />
+    <NavigationProperty Name="Tarifa" Relationship="ZarabiziModel.fk_Tarifa_idOficina" FromRole="Oficina" ToRole="Tarifa" />
+  </EntityType>
+  <EntityType Name="Recorrido">
+    <Key>
+      <PropertyRef Name="idRecorrido" />
+    </Key>
+    <Property Name="idRecorrido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="distanciaRecorrido" Type="Double" />
+    <Property Name="fechaSalidaRecorrido" Type="DateTime" Nullable="false" />
+    <Property Name="fechaLlegadaRecorrido" Type="DateTime" />
+    <Property Name="idEstacionInicio" Type="Int32" Nullable="false" />
+    <Property Name="idEstacionFinal" Type="Int32" />
+    <Property Name="idBicicleta" Type="Int32" />
+    <Property Name="idSocio" Type="Int32" />
+    <NavigationProperty Name="Bicicleta" Relationship="ZarabiziModel.fk_Recorrido_idBicicleta" FromRole="Recorrido" ToRole="Bicicleta" />
+    <NavigationProperty Name="Estacion" Relationship="ZarabiziModel.fk_Recorrido_idEstacionFinal" FromRole="Recorrido" ToRole="Estacion" />
+    <NavigationProperty Name="Estacion1" Relationship="ZarabiziModel.fk_Recorrido_idEstacionInicio" FromRole="Recorrido" ToRole="Estacion" />
+    <NavigationProperty Name="Socio" Relationship="ZarabiziModel.fk_Recorrido_idSocio" FromRole="Recorrido" ToRole="Socio" />
+  </EntityType>
+  <EntityType Name="RepararBicicleta">
+    <Key>
+      <PropertyRef Name="idRepararBicicleta" />
+    </Key>
+    <Property Name="idRepararBicicleta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpleado" Type="Int32" />
+    <Property Name="idBicicleta" Type="Int32" />
+    <Property Name="descripcionRepararBicicleta" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fechaRepararBicicleta" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Bicicleta" Relationship="ZarabiziModel.fk_RepararBicicleta_idBicicleta" FromRole="RepararBicicleta" ToRole="Bicicleta" />
+    <NavigationProperty Name="Empleado" Relationship="ZarabiziModel.fk_RepararBicicleta_idEmpleado" FromRole="RepararBicicleta" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="RepararEstacion">
+    <Key>
+      <PropertyRef Name="idRepararEstacion" />
+    </Key>
+    <Property Name="idRepararEstacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpleado" Type="Int32" />
+    <Property Name="idEstacion" Type="Int32" />
+    <Property Name="descripcionRepararEstacion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fechaRepararEstacion" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Empleado" Relationship="ZarabiziModel.fk_RepararEstacion_idEmpleado" FromRole="RepararEstacion" ToRole="Empleado" />
+    <NavigationProperty Name="Estacion" Relationship="ZarabiziModel.fk_RepararEstacion_idEstacion" FromRole="RepararEstacion" ToRole="Estacion" />
+  </EntityType>
+  <EntityType Name="Socio">
+    <Key>
+      <PropertyRef Name="idSocio" />
+    </Key>
+    <Property Name="idSocio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreSocio" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="apellidosSocio" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="direccionSocio" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="poblacionSocio" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="codigopostalSocio" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="tlfFijoSocio" Type="String" Nullable="false" MaxLength="9" Unicode="true" FixedLength="false" />
+    <Property Name="tlfMovilSocio" Type="String" MaxLength="9" Unicode="true" FixedLength="false" />
+    <Property Name="fechaNacimientoSocio" Type="DateTime" Nullable="false" />
+    <Property Name="fechaAltaSocio" Type="DateTime" Nullable="false" />
+    <Property Name="CuentaBancariaSocio" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="idOficina" Type="Int32" />
+    <Property Name="idUsuario" Type="Guid" />
+    <NavigationProperty Name="aspnet_Users" Relationship="ZarabiziModel.fk_Socio_idUsuario" FromRole="Socio" ToRole="aspnet_Users" />
+    <NavigationProperty Name="Bono" Relationship="ZarabiziModel.fk_Bono_idSocio" FromRole="Socio" ToRole="Bono" />
+    <NavigationProperty Name="Incidencia" Relationship="ZarabiziModel.fk_Incidencia_idSocio" FromRole="Socio" ToRole="Incidencia" />
+    <NavigationProperty Name="Oficina" Relationship="ZarabiziModel.fk_Socio_idOficina" FromRole="Socio" ToRole="Oficina" />
+    <NavigationProperty Name="Recorrido" Relationship="ZarabiziModel.fk_Recorrido_idSocio" FromRole="Socio" ToRole="Recorrido" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tarifa">
+    <Key>
+      <PropertyRef Name="idTarifa" />
+    </Key>
+    <Property Name="idTarifa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="diasTarifa" Type="Int32" Nullable="false" />
+    <Property Name="nombreTarifa" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fechaInicioTarifa" Type="DateTime" Nullable="false" />
+    <Property Name="fechaFinalTarifa" Type="DateTime" Nullable="false" />
+    <Property Name="precioTarifa" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="idOficina" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bono" Relationship="ZarabiziModel.fk_Bono_idTarifa" FromRole="Tarifa" ToRole="Bono" />
+    <NavigationProperty Name="Oficina" Relationship="ZarabiziModel.fk_Tarifa_idOficina" FromRole="Tarifa" ToRole="Oficina" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationName" />
+      <PropertyRef Name="LoweredApplicationName" />
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_MembershipUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="PasswordFormat" />
+      <PropertyRef Name="IsApproved" />
+      <PropertyRef Name="IsLockedOut" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="LastLoginDate" />
+      <PropertyRef Name="LastPasswordChangedDate" />
+      <PropertyRef Name="LastLockoutDate" />
+      <PropertyRef Name="FailedPasswordAttemptCount" />
+      <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="DataSize" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Roles">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="LoweredRoleName" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Users">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="LoweredUserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_Paths">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="Path" />
+      <PropertyRef Name="LoweredPath" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_Shared">
+    <Key>
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="DataSize" Type="Int32" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_User">
+    <Key>
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="DataSize" Type="Int32" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_anclaje_idBicicleta">
+    <End Role="Bicicleta" Type="ZarabiziModel.Bicicleta" Multiplicity="0..1" />
+    <End Role="Anclaje" Type="ZarabiziModel.Anclaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bicicleta">
+        <PropertyRef Name="idBicicleta" />
+      </Principal>
+      <Dependent Role="Anclaje">
+        <PropertyRef Name="idBicicleta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Anclaje_idEstacion">
+    <End Role="Estacion" Type="ZarabiziModel.Estacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Anclaje" Type="ZarabiziModel.Anclaje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estacion">
+        <PropertyRef Name="idEstacion" />
+      </Principal>
+      <Dependent Role="Anclaje">
+        <PropertyRef Name="idEstacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__Appli__6C190EBB">
+    <End Role="aspnet_Applications" Type="ZarabiziModel.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="ZarabiziModel.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pa__Appli__25518C17">
+    <End Role="aspnet_Applications" Type="ZarabiziModel.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Paths" Type="ZarabiziModel.aspnet_Paths" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Paths">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__0E6E26BF">
+    <End Role="aspnet_Applications" Type="ZarabiziModel.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="ZarabiziModel.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__5812160E">
+    <End Role="aspnet_Applications" Type="ZarabiziModel.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="ZarabiziModel.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__6D0D32F4">
+    <End Role="aspnet_Users" Type="ZarabiziModel.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="ZarabiziModel.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__2CF2ADDF">
+    <End Role="aspnet_Paths" Type="ZarabiziModel.aspnet_Paths" Multiplicity="1" />
+    <End Role="aspnet_PersonalizationAllUsers" Type="ZarabiziModel.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationAllUsers">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__PathI__32AB8735">
+    <End Role="aspnet_Paths" Type="ZarabiziModel.aspnet_Paths" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="ZarabiziModel.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Paths">
+        <PropertyRef Name="PathId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="PathId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pe__UserI__339FAB6E">
+    <End Role="aspnet_Users" Type="ZarabiziModel.aspnet_Users" Multiplicity="0..1" />
+    <End Role="aspnet_PersonalizationPerUser" Type="ZarabiziModel.aspnet_PersonalizationPerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_PersonalizationPerUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Pr__UserI__02FC7413">
+    <End Role="aspnet_Users" Type="ZarabiziModel.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Profile" Type="ZarabiziModel.aspnet_Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Socio_idUsuario">
+    <End Role="aspnet_Users" Type="ZarabiziModel.aspnet_Users" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Socio" Type="ZarabiziModel.Socio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Socio">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Recorrido_idBicicleta">
+    <End Role="Bicicleta" Type="ZarabiziModel.Bicicleta" Multiplicity="0..1" />
+    <End Role="Recorrido" Type="ZarabiziModel.Recorrido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bicicleta">
+        <PropertyRef Name="idBicicleta" />
+      </Principal>
+      <Dependent Role="Recorrido">
+        <PropertyRef Name="idBicicleta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RepararBicicleta_idBicicleta">
+    <End Role="Bicicleta" Type="ZarabiziModel.Bicicleta" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RepararBicicleta" Type="ZarabiziModel.RepararBicicleta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bicicleta">
+        <PropertyRef Name="idBicicleta" />
+      </Principal>
+      <Dependent Role="RepararBicicleta">
+        <PropertyRef Name="idBicicleta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Bono_idSocio">
+    <End Role="Socio" Type="ZarabiziModel.Socio" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bono" Type="ZarabiziModel.Bono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Socio">
+        <PropertyRef Name="idSocio" />
+      </Principal>
+      <Dependent Role="Bono">
+        <PropertyRef Name="idSocio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Bono_idTarifa">
+    <End Role="Tarifa" Type="ZarabiziModel.Tarifa" Multiplicity="1" />
+    <End Role="Bono" Type="ZarabiziModel.Bono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarifa">
+        <PropertyRef Name="idTarifa" />
+      </Principal>
+      <Dependent Role="Bono">
+        <PropertyRef Name="idTarifa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RepararBicicleta_idEmpleado">
+    <End Role="Empleado" Type="ZarabiziModel.Empleado" Multiplicity="0..1" />
+    <End Role="RepararBicicleta" Type="ZarabiziModel.RepararBicicleta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="RepararBicicleta">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RepararEstacion_idEmpleado">
+    <End Role="Empleado" Type="ZarabiziModel.Empleado" Multiplicity="0..1" />
+    <End Role="RepararEstacion" Type="ZarabiziModel.RepararEstacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="RepararEstacion">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Recorrido_idEstacionFinal">
+    <End Role="Estacion" Type="ZarabiziModel.Estacion" Multiplicity="0..1" />
+    <End Role="Recorrido" Type="ZarabiziModel.Recorrido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estacion">
+        <PropertyRef Name="idEstacion" />
+      </Principal>
+      <Dependent Role="Recorrido">
+        <PropertyRef Name="idEstacionFinal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Recorrido_idEstacionInicio">
+    <End Role="Estacion" Type="ZarabiziModel.Estacion" Multiplicity="1" />
+    <End Role="Recorrido" Type="ZarabiziModel.Recorrido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estacion">
+        <PropertyRef Name="idEstacion" />
+      </Principal>
+      <Dependent Role="Recorrido">
+        <PropertyRef Name="idEstacionInicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RepararEstacion_idEstacion">
+    <End Role="Estacion" Type="ZarabiziModel.Estacion" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RepararEstacion" Type="ZarabiziModel.RepararEstacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estacion">
+        <PropertyRef Name="idEstacion" />
+      </Principal>
+      <Dependent Role="RepararEstacion">
+        <PropertyRef Name="idEstacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Incidencia_idSocio">
+    <End Role="Socio" Type="ZarabiziModel.Socio" Multiplicity="0..1" />
+    <End Role="Incidencia" Type="ZarabiziModel.Incidencia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Socio">
+        <PropertyRef Name="idSocio" />
+      </Principal>
+      <Dependent Role="Incidencia">
+        <PropertyRef Name="idSocio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Socio_idOficina">
+    <End Role="Oficina" Type="ZarabiziModel.Oficina" Multiplicity="0..1" />
+    <End Role="Socio" Type="ZarabiziModel.Socio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oficina">
+        <PropertyRef Name="idOficina" />
+      </Principal>
+      <Dependent Role="Socio">
+        <PropertyRef Name="idOficina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tarifa_idOficina">
+    <End Role="Oficina" Type="ZarabiziModel.Oficina" Multiplicity="1" />
+    <End Role="Tarifa" Type="ZarabiziModel.Tarifa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oficina">
+        <PropertyRef Name="idOficina" />
+      </Principal>
+      <Dependent Role="Tarifa">
+        <PropertyRef Name="idOficina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Recorrido_idSocio">
+    <End Role="Socio" Type="ZarabiziModel.Socio" Multiplicity="0..1" />
+    <End Role="Recorrido" Type="ZarabiziModel.Recorrido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Socio">
+        <PropertyRef Name="idSocio" />
+      </Principal>
+      <Dependent Role="Recorrido">
+        <PropertyRef Name="idSocio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="aspnet_UsersInRoles">
+    <End Role="aspnet_Roles" Type="ZarabiziModel.aspnet_Roles" Multiplicity="*" />
+    <End Role="aspnet_Users" Type="ZarabiziModel.aspnet_Users" Multiplicity="*" />
+  </Association>
+</Schema>

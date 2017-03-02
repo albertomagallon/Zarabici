@@ -1,0 +1,8 @@
+﻿@using Zarabizi.Resources
+@if(Request.IsAuthenticated) {
+    <text>@Messages.lbl_Bienvenido <strong>@User.Identity.Name</strong>!
+    [ @Html.ActionLink(@Messages.lbl_Salir, "LogOff", "Account") ]</text>
+}
+else {
+    @:[ @Html.ActionLink(@Messages.lbl_Acceder, "LogOn", "Account") ]
+}

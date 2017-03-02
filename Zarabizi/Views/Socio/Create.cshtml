@@ -1,0 +1,123 @@
+﻿@model Zarabizi.Models.Socio
+@using Zarabizi.Resources
+
+@{
+    ViewBag.Title = @Messages.lbl_Crear;
+}
+
+<h2>@Messages.lbl_Crear</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Messages.lbl_Socio</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombreSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombreSocio)
+            @Html.ValidationMessageFor(model => model.nombreSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.apellidosSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.apellidosSocio)
+            @Html.ValidationMessageFor(model => model.apellidosSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.direccionSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.direccionSocio)
+            @Html.ValidationMessageFor(model => model.direccionSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.poblacionSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.poblacionSocio)
+            @Html.ValidationMessageFor(model => model.poblacionSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.codigopostalSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.codigopostalSocio)
+            @Html.ValidationMessageFor(model => model.codigopostalSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tlfFijoSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tlfFijoSocio)
+            @Html.ValidationMessageFor(model => model.tlfFijoSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tlfMovilSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tlfMovilSocio)
+            @Html.ValidationMessageFor(model => model.tlfMovilSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaNacimientoSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaNacimientoSocio)
+            @Html.ValidationMessageFor(model => model.fechaNacimientoSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaAltaSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaAltaSocio)
+            @Html.ValidationMessageFor(model => model.fechaAltaSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CuentaBancariaSocio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CuentaBancariaSocio)
+            @Html.ValidationMessageFor(model => model.CuentaBancariaSocio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idOficina, "Oficina")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idOficina", String.Empty)
+            @Html.ValidationMessageFor(model => model.idOficina)
+        </div>
+
+        <div class="editor-label">
+            <!--@Html.LabelFor(model => model.idUsuario, "idUsuario")-->
+        </div>
+        <div class="editor-field">
+
+    @Html.Hidden("aspnet_users", Membership.GetUser().ProviderUserKey)
+    @Html.Hidden("userId", Membership.GetUser().ProviderUserKey)
+        </div>
+
+        <p>
+            <input type="submit" value="Crear" />
+        </p>
+    </fieldset>
+}
+
+<div>
+   <!-- @Html.ActionLink("Back to List", "Index")-->
+</div>

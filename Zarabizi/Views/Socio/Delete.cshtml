@@ -1,0 +1,79 @@
+﻿@model Zarabizi.Models.Socio
+@using Zarabizi.Resources          
+
+@{
+    ViewBag.Title = @Messages.lbl_Eliminar;
+}
+
+<h2>@Messages.lbl_Eliminar</h2>
+
+<h3>@Messages.lbl_SeguroEliminarSocio</h3>
+<fieldset>
+    <legend>@Messages.lbl_Socio</legend>
+
+    <div class="display-label">@Messages.form_Socio_nombreSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombreSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_apellidosSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.apellidosSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_direccionSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.direccionSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_poblacionSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.poblacionSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_codigopostalSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.codigopostalSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_tlfFijoSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tlfFijoSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_tlfMovilSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tlfMovilSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_fechaNacimientoSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaNacimientoSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_fechaAltaSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaAltaSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_CuentaBancariaSocio</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CuentaBancariaSocio)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_idOficina</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Oficina.nombreOficina)
+    </div>
+
+    <div class="display-label">@Messages.form_Socio_idUsuario</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.aspnet_Users.UserName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Eliminar" /> |
+        @Html.ActionLink(@Messages.lbl_VolverLista, "Index")
+    </p>
+}
